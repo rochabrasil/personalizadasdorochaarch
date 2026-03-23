@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCHA ARCH | OFICIAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --branco: #ffffff;
+            --preto: #1a1a1a;
+            --cinza-suave: #f0f2f5;
+            --borda-radius-lg: 30px;
+            --borda-radius-sm: 20px;
+            --borda-grossa: 4px solid var(--preto);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #fcfcfc;
+            /* FUNDO CARTOON ADAPTADO: Padrão de Círculos Suaves cobrindo toda a tela */
+            background-image: radial-gradient(#e0e0e0 2px, transparent 2px);
+            background-size: 35px 35px;
+            background-attachment: fixed; /* Mantém o fundo fixo ao rolar */
+            color: var(--preto);
+            font-family: 'Fredoka', sans-serif;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh; /* Garante que o fundo preencha toda a altura */
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            text-align: center;
+            animation: fadeInReveal 1s ease-out;
+        }
+
+        @keyframes fadeInReveal {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Cabeçalho e Logo Sem Círculo --- */
+        .header-box {
+            margin-bottom: 50px;
+        }
+
+        .logo-img {
+            width: 150px; /* Largura padrão */
+            height: auto;
+            margin-bottom: 20px;
+            /* REMOVIDO: Borda redonda, fundo e sombra */
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            /* Animação suave para flutuar */
+            animation: float 5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Efeito ao passar o mouse */
+        .logo-img:hover {
+            transform: scale(1.05); /* Aumenta um pouco */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--preto);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- Lista de Links Estilo Cartoon --- */
+        .links-list {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 60px;
+        }
+
+        .btn-link {
+            background: var(--branco);
+            border: var(--borda-grossa);
+            padding: 20px 30px;
+            border-radius: var(--borda-radius-lg);
+            text-decoration: none;
+            color: var(--preto);
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: 0 8px 0 var(--preto);
+            transition: all 0.2s ease;
+            position: relative;
+            top: 0;
+        }
+
+        .btn-link:hover {
+            top: 2px;
+            box-shadow: 0 6px 0 var(--preto);
+            background: var(--cinza-suave);
+        }
+
+        .btn-link:active {
+            top: 8px;
+            box-shadow: 0 0 0 var(--preto);
+        }
+
+        .btn-link i { font-size: 1.3rem; }
+
+        /* --- Formulário Cartoon Profissional --- */
+        .form-card {
+            background: var(--branco);
+            border: var(--borda-grossa);
+            border-radius: var(--borda-radius-lg);
+            padding: 50px 40px;
+            box-shadow: 0 15px 0 rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: var(--preto);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 0 var(--cinza-suave);
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 10px;
+            margin-left: 15px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 18px 25px;
+            border-radius: var(--borda-radius-sm);
+            border: 3px solid #e0e0e0;
+            background: #fdfdfd;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+            color: var(--preto);
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: var(--preto);
+            background: #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+        }
+
+        input::placeholder { color: #aaa; }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Botão de Envio com Feedback Tátil */
+        .btn-submit {
+            width: 100%;
+            padding: 25px;
+            background: var(--preto);
+            color: var(--branco);
+            border: none;
+            border-radius: var(--borda-radius-lg);
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 8px 0 #333;
+            transition: all 0.2s;
+            letter-spacing: 1px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 0 #333;
+            background: #333;
+        }
+
+        .btn-submit:active {
+            transform: translateY(6px);
+            box-shadow: 0 2px 0 #333;
+        }
+
+        /* --- Footer --- */
+        footer {
+            margin-top: 80px;
+            opacity: 0.5;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Mobile Responsividade */
+        @media (max-width: 650px) {
+            .container { padding: 20px 10px; }
+            .header-box { margin-bottom: 30px; }
+            .logo-img { width: 120px; }
+            h1 { font-size: 1.8rem; letter-spacing: 1px; }
+            .row { grid-template-columns: 1fr; gap: 0; }
+            .form-card { padding: 30px 20px; }
+            h2 { font-size: 1.4rem; margin-bottom: 30px; }
+            .btn-link { padding: 15px; font-size: 0.9rem; }
+            .btn-submit { padding: 20px; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header class="header-box">
+            <img src="logorocha1.png" alt="ROCHA" class="logo-img">
+            <h1>REDES SOCIAIS</h1>
+        </header>
+
+        <nav class="links-list">
+            <a href="https://m.youtube.com/@rochaarch" target="_blank" class="btn-link">
+                <i class="fab fa-youtube"></i> YouTube Canal
+            </a>
+            <a href="https://www.instagram.com/rochaarch" target="_blank" class="btn-link">
+                <i class="fab fa-instagram"></i> Instagram Perfil
+            </a>
+            <a href="https://www.tiktok.com/@rocha.rch.gameplay" target="_blank" class="btn-link">
+                <i class="fab fa-tiktok"></i> TikTok Conteúdo
+            </a>
+            <a href="https://discord.com/invite/aqPSjum4aN" target="_blank" class="btn-link">
+                <i class="fab fa-discord"></i> Discord Servidor
+            </a>
+            <a href="https://chat.whatsapp.com/J9Grx4ij860A63lyzfGvTI" target="_blank" class="btn-link">
+                <i class="fab fa-whatsapp"></i> WhatsApp Grupo
+            </a>
+            <a href="https://m.twitch.tv/rochaarch/home" target="_blank" class="btn-link">
+                <i class="fab fa-twitch"></i> Twitch Live
+            </a>
+            <a href="https://www.facebook.com/RochaGameplayYT/" target="_blank" class="btn-link">
+                <i class="fab fa-facebook-f"></i> Facebook Página
+            </a>
+        </nav>
+
+        <section class="form-card">
+            <h2>INSCRIÇÃO PERSONALIZADA</h2>
+            
+            <form action="https://formspree.io/f/myknqval" method="POST">
+                
+                <div class="input-group">
+                    <label>NOME DO TIME / ORG</label>
+                    <input type="text" name="team_name" placeholder="Ex: Rocha Elite E-sports" required>
+                </div>
+
+                <div class="input-group">
+                    <label>ID DO LÍDER (DISCORD)</label>
+                    <input type="text" name="leader_discord" placeholder="SeuUser#0000" required>
+                </div>
+
+                <div class="row">
+                    <div class="input-group">
+                        <label>JOGADOR 01 (LÍDER)</label>
+                        <input type="text" name="p1_nick" placeholder="Nick In-Game" required>
+                    </div>
+                    <div class="input-group">
+                        <label>JOGADOR 02</label>
+                        <input type="text" name="p2_nick" placeholder="Nick In-Game" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-group">
+                        <label>JOGADOR 03</label>
+                        <input type="text" name="p3_nick" placeholder="Nick In-Game" required>
+                    </div>
+                    <div class="input-group">
+                        <label>JOGADOR 04</label>
+                        <input type="text" name="p4_nick" placeholder="Nick In-Game" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">CONFIRMAR AGORA!</button>
+            </form>
+        </section>
+
+        <footer>
+            ROCHA ARCH &copy; 2026 // MOSTRE SEU SUPER PODER
+        </footer>
+    </div>
+
+</body>
+</html>
